@@ -1,10 +1,9 @@
-# Prefer try-with-resources to try-finally
+# Always override hashCode when you override equals
 
-Many classes and interfaces in the Java
-libraries and in third-party libraries now implement or extend AutoCloseable. If
-you write a class that represents a resource that must be closed, your class should
-implement AutoCloseable too.
+You must override hashCode in every class that overrides equals
 
-The lesson is clear: Always use try-with-resources in preference to tryfinally when working with resources that must be closed. The resulting code is
-shorter and clearer, and the exceptions that it generates are more useful. The trywith-resources statement makes it easy to write correct code using resources that
-must be closed, which was practically impossible using try-finally
+If two objects are equal according to the equals(Object)  method, 
+then calling hashCode on the two objects must produce the same integer result.
+
+A good hash function tends to produce unequal hash codes for unequal
+instances
